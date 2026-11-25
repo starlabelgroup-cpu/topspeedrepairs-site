@@ -2,7 +2,8 @@
    repo is text-only, so the photo bytes live in _imgdata.js as base64
    string chunks (array-join format) and are decoded here — the same
    pattern the flagship uses for its embedded image modules.
-   Usage: /api/img?n=hero-kitchen · /api/img?n=city-van            */
+   Usage: /api/img?n=hero-tech · /api/img?n=city-van ·
+          /api/img?n=svc-refrigerator (and the other eight svc-*)  */
 const DATA = require('./_imgdata');
 
 module.exports = function (req, res) {

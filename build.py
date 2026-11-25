@@ -14,12 +14,13 @@ BASE = "https://topspeedrepairs.com"
 PHONE = "(844) 460-7038"
 TEL = "tel:+18444607038"
 FLAG = "https://topspeedserviceos.com"
-IMG_KITCHEN = "/api/img?n=hero-kitchen"
+IMG_HERO = "/api/img?n=hero-tech"
 IMG_VAN = "/api/img?n=city-van"
 
 # ---------------------------------------------------------------- services
 SERVICES = [
  dict(slug="refrigerator-repair", name="Refrigerator Repair", short="Refrigerator",
+      img="/api/img?n=svc-refrigerator", alt="Samsung French-door refrigerator with ice and water dispenser",
       h1a="Your fridge,", h1b="back to cold.", price=210,
       blurb="Not cooling, leaking, ice maker down — diagnosed on the first visit and quoted in writing before any work starts.",
       symptoms=[("Running warm","Food spoiling before its date — airflow, fans or sealed-system faults, confirmed on site."),
@@ -27,6 +28,7 @@ SERVICES = [
                 ("Ice maker quit","No ice, slow ice, bad taste — maker, valve and filter checked in one pass."),
                 ("Noisy or cycling","Loud fans, clicking, constant running — motors and controls tested before a quote.")]),
  dict(slug="washer-repair", name="Washer Repair", short="Washer",
+      img="/api/img?n=svc-washer", alt="Whirlpool Cabrio top-load washer",
       h1a="Your washer,", h1b="back in the wash.", price=210,
       blurb="Won't drain, spin or fill — pumps, belts and seals checked on site and quoted in writing before any work starts.",
       symptoms=[("Won't drain","Standing water after the cycle — pump, hose and filter traced on site."),
@@ -34,6 +36,7 @@ SERVICES = [
                 ("Leaking","Puddles at the base — hoses, seals and valves checked in one pass."),
                 ("Loud or shaking","Banging on spin — suspension, bearings and level confirmed on site.")]),
  dict(slug="dryer-repair", name="Dryer Repair", short="Dryer",
+      img="/api/img?n=svc-dryer", alt="GE dryer",
       h1a="Your dryer,", h1b="back to hot.", price=210,
       blurb="Runs but no heat, or drums that won't turn — elements, fuses and airflow tested end to end.",
       symptoms=[("No heat","Runs cold — elements, fuses and thermostats tested end to end."),
@@ -41,6 +44,7 @@ SERVICES = [
                 ("Takes forever","Three cycles to dry — airflow and venting tested first."),
                 ("Squealing or thumping","Noise that grows — rollers, glides and bearings inspected before a quote.")]),
  dict(slug="oven-range-repair", name="Oven & Range Repair", short="Oven",
+      img="/api/img?n=svc-oven", alt="Whirlpool glass-top slide-in range",
       h1a="Your oven,", h1b="back to baking.", price=210,
       blurb="Won't heat, uneven baking, dead burners — igniters, elements and controls checked safely.",
       symptoms=[("Won't heat","Dead oven, cold range — igniters and elements tested safely."),
@@ -48,6 +52,7 @@ SERVICES = [
                 ("Dead burner","One ring out — switches and elements traced before a quote."),
                 ("Temperature off","Burning or underdone — thermostat and control checked in one pass.")]),
  dict(slug="dishwasher-repair", name="Dishwasher Repair", short="Dishwasher",
+      img="/api/img?n=svc-dishwasher", alt="Stainless KitchenAid dishwasher installed under a granite counter",
       h1a="Your dishwasher,", h1b="back to clean.", price=210,
       blurb="Won't run, drain or clean — door, drain and control faults traced before a quote is written.",
       symptoms=[("Won't drain","Water standing in the tub — pump, hose and filter traced on site."),
@@ -55,6 +60,7 @@ SERVICES = [
                 ("Leaking","Puddles at the door — seals, valves and hoses inspected first."),
                 ("Dishes still dirty","Grit and film — spray arms, filters and water heat tested end to end.")]),
  dict(slug="freezer-ice-maker-repair", name="Freezer & Ice Maker Repair", short="Freezer",
+      img="/api/img?n=svc-freezer", alt="In-door ice maker unit",
       h1a="Your freezer,", h1b="back to frozen.", price=210,
       blurb="Thawing food or an ice maker that's quit — airflow, fans and controls inspected first.",
       symptoms=[("Thawing food","Soft ice cream, warm spots — airflow, fans and sealed system checked."),
@@ -62,6 +68,7 @@ SERVICES = [
                 ("Frost buildup","Ice on the walls — defrost system and door seals tested on site."),
                 ("Running constantly","Never cycles off — coils, fans and controls tested before a quote.")]),
  dict(slug="microwave-repair", name="Microwave Repair", short="Microwave",
+      img="/api/img?n=svc-microwave", alt="Sharp microwave drawer installed under a marble counter",
       h1a="Your microwave,", h1b="back to heating.", price=210,
       blurb="Dead panel, no heat, sparking — door switches and power checked the safe way, on site.",
       symptoms=[("No heat","Runs but food stays cold — power parts tested the safe way, on site."),
@@ -69,6 +76,7 @@ SERVICES = [
                 ("Sparking","Arcing inside — waveguide and interior inspected first, safely."),
                 ("Turntable stopped","Plate still, food uneven — motor and rollers checked in one pass.")]),
  dict(slug="garbage-disposal-repair", name="Garbage Disposal Repair", short="Disposal",
+      img="/api/img?n=svc-disposal", alt="Garbage disposal installed under a kitchen sink",
       h1a="Your disposal,", h1b="back to clear.", price=210,
       blurb="Jammed, humming or leaking — cleared and tested safely under the sink.",
       symptoms=[("Jammed","Stuck solid — cleared safely and tested under load."),
@@ -76,6 +84,7 @@ SERVICES = [
                 ("Leaking","Drips under the sink — seals, flange and housing checked in one pass."),
                 ("Won't turn on","Silent at the switch — power, reset and switch tested before a quote.")]),
  dict(slug="appliance-installation", name="Appliance Installation", short="Installation",
+      img="/api/img?n=svc-installation", alt="Built-in side-by-side refrigerator installed in a white kitchen",
       h1a="Your new appliance,", h1b="in and working.", price=150, install=True,
       blurb="New unit going in — leveled, connected and tested, with the old haul-away arranged.",
       symptoms=[("Refrigerators & freezers","Set, leveled and cooling-checked — ice makers connected and tested."),
@@ -129,7 +138,7 @@ def head(title, desc, path, ld=None):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{BASE}{path}">
-<meta property="og:image" content="{BASE}{IMG_KITCHEN}">
+<meta property="og:image" content="{BASE}{IMG_HERO}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,11 +242,11 @@ ORG_LD = {
 def svc_card(s, city=None):
     q = f"?service={s['short']}" + (f"&city={city}" if city else "")
     cta = "Book installation" if s.get("install") else "Book this service"
-    tag = "Photo — technician at work" if not s.get("install") else "Photo — Top Speed at work"
-    img = IMG_VAN if s.get("install") else IMG_KITCHEN
+    tag = "Photo — a Top Speed install" if s.get("install") else f"Photo — {s['short']} service"
+    img = s["img"]
     return f"""
       <article class="card svc-card">
-        <div class="svc-photo"><img src="{img}" alt="Top Speed technician at work" loading="lazy"><span class="photo-tag">{tag}</span></div>
+        <div class="svc-photo"><img src="{img}" alt="{s['alt']}" loading="lazy"><span class="photo-tag">{tag}</span></div>
         <div class="svc-body">
           <h3 class="h3">{s['name']}</h3>
           <p>{s['blurb']}</p>
@@ -340,7 +349,7 @@ def home():
         <span class="chip chip-dark">65 cities served</span>
       </div>
     </div>
-    <div class="hero-photo"><img src="{IMG_KITCHEN}" alt="Top Speed technician testing a refrigerator in a customer's kitchen" fetchpriority="high">
+    <div class="hero-photo"><img src="{IMG_HERO}" alt="Top Speed technician repairing a refrigerator in a customer's kitchen" fetchpriority="high">
       <span class="photo-tag">Photo — technician at work</span></div>
   </div>
 </div></section>
@@ -523,8 +532,8 @@ def service_page(s):
     <a class="btn btn-ghost" href="{TEL}">Call {PHONE}</a></div>
     <div class="chips">{chips}</div>
   </div>
-  <div class="hero-photo"><img src="{IMG_KITCHEN}" alt="Top Speed technician at work in a customer's home">
-    <span class="photo-tag">Photo — technician at work</span></div>
+  <div class="hero-photo"><img src="{s['img']}" alt="{s['alt']}">
+    <span class="photo-tag">{"Photo — a Top Speed install" if s.get("install") else "Photo — " + s['short'] + " service"}</span></div>
 </div></div></section>
 
 <section class="section"><div class="wrap">
