@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Repair — Book Your Visit | Top Speed Appliance</title>
+<meta name="description" content="Book appliance repair online in about a minute. $99 diagnostic credited toward your repair, $210 flat repair labor, confirmed by a real Service Setter. Mon–Fri 8am–7pm.">
+<link rel="canonical" href="https://topspeedrepairs.com/book">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Top Speed Appliance">
+<meta property="og:title" content="Book a Repair — Book Your Visit | Top Speed Appliance">
+<meta property="og:description" content="Book appliance repair online in about a minute. $99 diagnostic credited toward your repair, $210 flat repair labor, confirmed by a real Service Setter. Mon–Fri 8am–7pm.">
+<meta property="og:url" content="https://topspeedrepairs.com/book">
+<meta property="og:image" content="https://topspeedrepairs.com/api/img?n=hero-kitchen">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="Top Speed Appliance — home"><span class="logo-mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></span>
+      <span><span class="logo-name">TOP SPEED</span><div class="logo-sub">APPLIANCE</div></span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/services">Services</a>
+      <a href="/cities">Cities</a>
+      <a href="/pricing">Pricing</a>
+      <a href="https://topspeedserviceos.com/track">Track My Tech</a>
+      <a href="https://topspeedserviceos.com/top-speed-os">Top Speed OS</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+18444607038">(844) 460-7038</a>
+      <a class="btn btn-primary" href="/book">Book a repair</a>
+      <button class="burger" data-burger aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <a href="/services">Services</a>
+    <a href="/cities">Cities</a>
+    <a href="/pricing">Pricing</a>
+    <a href="https://topspeedserviceos.com/track">Track My Tech</a>
+    <a href="https://topspeedserviceos.com/top-speed-os">Top Speed OS</a>
+    <a href="tel:+18444607038">Call (844) 460-7038</a>
+    <a href="/book">Book a repair</a>
+  </div>
+</header>
+<div class="checker" aria-hidden="true"></div>
+
+<section class="page-hero"><div class="wrap">
+  <div style="display:flex;justify-content:space-between;gap:32px;align-items:flex-start;flex-wrap:wrap">
+    <div>
+      <p class="eyebrow">Book a repair</p>
+      <h1 class="h1" style="font-size:clamp(36px,4.6vw,54px)">Book your visit.</h1>
+      <p class="lede" style="margin-top:14px">The classic form — about a minute, no account needed. A Service Setter confirms every request by phone.</p>
+    </div>
+    <div class="progress" aria-hidden="true"><div class="p-step"><span class="p-dot">1</span><span>Contact</span></div><div class="p-step"><span class="p-dot">2</span><span>Location</span></div><div class="p-step"><span class="p-dot">3</span><span>Appliance</span></div><div class="p-step"><span class="p-dot">4</span><span>Schedule</span></div><div class="p-step"><span class="p-dot">5</span><span>Review</span></div></div>
+  </div>
+</div></section>
+<div class="wrap"><div class="book-grid">
+  <form class="form-card" id="book-form" novalidate>
+    <div id="form-card-inner">
+    <div class="f-head"><h2>Your details</h2><span class="step-note">The classic form leads — Speedy is below, if you prefer.</span></div>
+    <div class="f-row">
+      <div><label class="f-label" for="f-first">First name</label><input class="input" id="f-first" autocomplete="given-name" placeholder="Jordan"></div>
+      <div><label class="f-label" for="f-last">Last name</label><input class="input" id="f-last" autocomplete="family-name" placeholder="Rivera"></div>
+    </div>
+    <div class="f-row" style="margin-top:18px">
+      <div><label class="f-label" for="f-phone">Mobile phone</label><input class="input" id="f-phone" type="tel" autocomplete="tel" placeholder="(555) 555-0142"></div>
+      <div><label class="f-label" for="f-email">Email <span style="text-transform:none;letter-spacing:0">(optional)</span></label><input class="input" id="f-email" type="email" autocomplete="email" placeholder="jordan@email.com"></div>
+    </div>
+
+    <div class="f-sec"><div class="zip-panel">
+      <label class="f-label" for="f-zip">Where's the appliance?</label>
+      <div class="zip-row">
+        <input class="input" id="f-zip" inputmode="numeric" autocomplete="postal-code" placeholder="ZIP — e.g. 33301" maxlength="5">
+        <span class="zip-msg" id="zip-msg" role="status"></span>
+        <button type="button" class="linklike" id="use-location">Use my location</button>
+      </div>
+      <div id="city-wrap" style="display:none;margin-top:16px">
+        <label class="f-label" for="f-city">Your city</label>
+        <select class="input" id="f-city"><option value="">Choose your city…</option></select>
+      </div>
+      <div style="margin-top:16px">
+        <label class="f-label" for="f-address">Street address</label>
+        <input class="input" id="f-address" autocomplete="street-address" placeholder="Street, unit, city">
+      </div>
+    </div></div>
+
+    <div class="f-sec">
+      <span class="f-label">Appliance</span>
+      <div class="pill-group"><button type="button" class="pill-btn" data-appliance="Refrigerator">Refrigerator</button><button type="button" class="pill-btn" data-appliance="Washer">Washer</button><button type="button" class="pill-btn" data-appliance="Dryer">Dryer</button><button type="button" class="pill-btn" data-appliance="Oven">Oven</button><button type="button" class="pill-btn" data-appliance="Dishwasher">Dishwasher</button><button type="button" class="pill-btn" data-appliance="Freezer">Freezer</button><button type="button" class="pill-btn" data-appliance="Microwave">Microwave</button><button type="button" class="pill-btn" data-appliance="Disposal">Disposal</button><button type="button" class="pill-btn" data-appliance="Installation">Installation</button></div>
+    </div>
+
+    <div class="f-sec">
+      <label class="f-label" for="f-issue">What's it doing?</label>
+      <textarea class="input" id="f-issue" placeholder="Running warm — food spoiling, ice maker quit"></textarea>
+    </div>
+
+    <div class="f-sec">
+      <div class="f-row">
+        <div><label class="f-label" for="f-date">Preferred day</label><input class="input" id="f-date" type="date"></div>
+        <div><span class="f-label">Arrival window</span><div class="pill-group" id="win-group"></div></div>
+      </div>
+      <p class="step-note" id="avail-note" style="margin-top:10px">Pick a day and window — your Service Setter confirms the exact appointment by text.</p>
+    </div>
+
+    <input class="hp" id="f-website" name="companyWebsite" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-err" id="form-err" role="alert"></div>
+    <div class="form-foot">
+      <button class="btn btn-primary" id="submit-btn" type="submit">Send booking request</button>
+      <span class="note">$99 diagnostic collected at booking — credited toward your repair.</span>
+    </div>
+    </div>
+  </form>
+
+  <div class="rail">
+    <aside class="visit-card" aria-label="Your visit summary">
+      <p class="eyebrow">Your visit</p>
+      <div class="visit-title" id="visit-title">Your repair visit</div>
+      <div class="visit-sub" id="visit-sub">Your city · your ZIP</div>
+      <div class="visit-rows">
+        <div><span>Diagnostic</span><b>$99 — credited</b></div>
+        <div><span>Repair labor</span><b>$210 flat</b></div>
+        <div><span>Parts</span><b>Written quote first</b></div>
+        <div><span>Window</span><b id="visit-window">Confirmed by phone</b></div>
+      </div>
+      <p class="visit-fine">90-day parts &amp; labor warranty on the repair.</p>
+    </aside>
+    <aside class="speedy-card">
+      <span class="chat-avatar">S</span>
+      <h3 class="h3" style="margin-top:14px">Prefer the high-tech way?</h3>
+      <p>Tell Speedy what's wrong — type it, say it, or snap a photo. Speedy books it in the chat. Same queue, same confirmation.</p>
+      <div class="msg msg-user" style="margin:0 0 18px;max-width:100%">My washer won't drain — can you come Thursday?</div>
+      <button class="btn btn-navy" data-ask-speedy>Ask Speedy</button>
+      <p style="margin-top:16px">Or call <a href="tel:+18444607038" style="font-weight:600;color:var(--ink-900)">(844) 460-7038</a> — Mon–Fri, 8am–7pm.</p>
+    </aside>
+  </div>
+</div></div>
+<div style="height:96px"></div>
+
+<div class="checker" aria-hidden="true"></div>
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></span>
+          <span><span class="logo-name">TOP SPEED</span><div class="logo-sub">THE FASTER, THE BETTER.</div></span></a>
+        <a class="footer-phone" href="tel:+18444607038">(844) 460-7038</a>
+        <p>Mon–Fri, 8am–7pm · Service-area business — repairs at your home or business<br>
+        across 65 cities in Broward, Palm Beach &amp; Miami-Dade.</p>
+      </div>
+      <div class="footer-cols">
+        <div><h4>Services</h4><a href="/services/refrigerator-repair" style="display:inline;padding:0">Refrigerator</a> · <a href="/services/washer-repair" style="display:inline;padding:0">Washer</a> · <a href="/services/dryer-repair" style="display:inline;padding:0">Dryer</a><br><a href="/services/oven-range-repair" style="display:inline;padding:0">Oven</a> · <a href="/services/dishwasher-repair" style="display:inline;padding:0">Dishwasher</a> · <a href="/services/freezer-ice-maker-repair" style="display:inline;padding:0">Freezer</a><br><a href="/services/microwave-repair" style="display:inline;padding:0">Microwave</a> · <a href="/services/garbage-disposal-repair" style="display:inline;padding:0">Disposal</a> · <a href="/services/appliance-installation" style="display:inline;padding:0">Installation</a></div>
+        <div><h4>Platform</h4>
+          <a href="/book">Book a repair</a>
+          <a href="https://topspeedserviceos.com/track">Track My Tech</a>
+          <a href="https://topspeedserviceos.com/top-speed-os">Top Speed OS</a>
+        </div>
+        <div><h4>Company</h4>
+          <a href="https://topspeedserviceos.com/top-speed-os">About the network</a>
+          <a href="https://topspeedappliances.com">Sales OS — shop</a>
+          <a href="https://topspeedserviceos.com/advertise">Advertise with us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Top Speed Appliance LLC — <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · 131 local pages, one platform.</span>
+      <span><a href="/book">Book online</a> · <a href="#" data-ask-speedy>Ask Speedy</a> · <a href="tel:+18444607038">Call (844) 460-7038</a></span>
+    </div>
+  </div>
+</footer>
+<script src="https://topspeedserviceos.com/speedy-widget.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
+
+<script src="/assets/js/book.js" defer></script>
