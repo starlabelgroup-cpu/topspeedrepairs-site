@@ -379,7 +379,7 @@ def home():
         <span class="chip chip-dark">65 cities served</span>
       </div>
     </div>
-    <div class="hero-photo"><img src="{IMG_HERO}" alt="Top Speed technician repairing a refrigerator in a customer's kitchen" fetchpriority="high">
+    <div class="hero-photo"><img src="{IMG_HERO}" alt="Top Speed technician holding a Service OS tablet beside a stainless-steel refrigerator" fetchpriority="high">
       <span class="photo-tag">Photo — technician at work</span></div>
   </div>
 </div></section>

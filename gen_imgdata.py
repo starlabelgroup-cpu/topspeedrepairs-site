@@ -5,10 +5,14 @@ stored as base64 string chunks (array-join format) and decoded at runtime
 by api/img.js — the same pattern the flagship uses for embedded images.
 
 Image sources (2026-11-24 image replacement, Ramone's directive):
-  hero-tech + the nine svc-* photos are copied from the flagship
-  topspeedserviceos.com library (apps/web photo-*.jpg + apps/web/service/
-  hero-tech.webp), processed to WebP in
-  ~/workspace/repairs-image-replacement/processed/.
+  the nine svc-* photos are copied from the flagship
+  topspeedserviceos.com library (apps/web photo-*.jpg), processed to
+  WebP in ~/workspace/repairs-image-replacement/processed/.
+  hero-tech: Ramone's own uploaded brand photo (2026-11-24 hero swap) —
+  technician in uniform holding the Service OS tablet beside a branded
+  stainless fridge; converted from his 1536x1024 JPEG upload to WebP q88,
+  kept in ~/workspace/repairs-image-replacement/processed/hero-tech.webp
+  (swap workspace: ~/workspace/repairs-hero-swap/).
   city-van is the premium package's art-directed van photo.
 After regenerating, verify: node -e "const D=require('./api/_imgdata');
 for (const k in D){const b=Buffer.from(D[k].b64,'base64');
