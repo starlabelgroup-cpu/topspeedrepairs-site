@@ -222,6 +222,7 @@ def footer():
 </footer>
 <script src="{FLAG}/speedy-widget.js" defer></script>
 <script src="/assets/js/site.js" defer></script>
+<script src="/ads-stream.js" defer></script>
 </body>
 </html>
 """
@@ -299,6 +300,35 @@ HOME_STEPS = [
   ("Track your tech live", "From request to repair, follow every stage in Track My Tech — and see your tech on the way."),
 ]
 
+# ── Ads Library stream (2026-11-24) ─────────────────────────────
+# This site's service slugs → the Ads Library's service tags.
+AD_TAGS = {
+    "refrigerator-repair": "refrigerator",
+    "washer-repair": "washer",
+    "dryer-repair": "dryer",
+    "oven-range-repair": "oven-range",
+    "dishwasher-repair": "dishwasher",
+    "freezer-ice-maker-repair": "freezer-ice-maker",
+    "microwave-repair": "microwave",
+    "garbage-disposal-repair": "garbage-disposal",
+    "appliance-installation": "installation",
+}
+
+def ad_slot(slot, service=None, city=None):
+    """One streaming slot for the managed Flywheel Ads Library.
+    The embed (/ads-stream.js, loaded in the footer) fills it with
+    the next house creative — matched, rotated and counted by the
+    Service OS. An empty library renders nothing at all."""
+    attrs = 'data-slot="' + slot + '" data-platform="topspeedrepairs"'
+    if service:
+        attrs += ' data-service="' + service + '"'
+    if city:
+        attrs += ' data-city="' + city + '"'
+    return ('\n<section class="section" style="padding-top:0;padding-bottom:8px">'
+            '<div class="wrap" style="max-width:880px">\n'
+            '  <div data-ts-ad ' + attrs + '></div>\n'
+            '</div></section>\n')
+
 def speedy_section():
     return f"""
 <section class="section"><div class="wrap speedy-grid">
@@ -369,6 +399,7 @@ def home():
 {steps_band(HOME_STEPS)}
 {speedy_section()}
 {fleet_band()}
+{ad_slot("home")}
 <section class="section" id="pricing" style="padding-top:24px"><div class="wrap">
   <p class="eyebrow">Flat, published pricing</p>
   <h2 class="h2" style="margin-bottom:40px">The rate card. No ranges, no guessing.</h2>
@@ -572,6 +603,7 @@ def service_page(s):
   <p class="eyebrow" style="color:var(--ink-400);margin-top:56px">Also fixed by Top Speed</p>
   <div class="chips">{others}</div>
 </div></section>
+{ad_slot("service", service=AD_TAGS[s['slug']])}
 {footer()}"""
     return head(f"{s['name']} — ${s['price']} Flat Labor | Top Speed Appliance",
                 f"{s['name']} across 65 cities in Broward, Palm Beach & Miami-Dade. $99 diagnostic credited toward your repair, ${s['price']} flat labor, written quote before any work.",
@@ -643,6 +675,7 @@ def city_page(c):
   <div class="chips">{near}</div>
   <p style="margin-top:22px"><a class="book-link" href="/cities" style="color:var(--red-600)">All 65 cities →</a></p>
 </div></section>
+{ad_slot("city", city=c['slug'])}
 {footer()}"""
     return head(f"Appliance Repair in {c['name']}, FL | Top Speed Appliance",
                 f"Flat-rate appliance repair & installation in {c['name']} ({c['county']} County). $99 diagnostic credited, $210 flat repair labor. Book online in about a minute.",
