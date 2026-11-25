@@ -524,6 +524,7 @@ def book():
     </aside>
   </div>
 </div></div>
+{ad_slot("book")}
 <div style="height:96px"></div>
 {footer()}
 <script src="/assets/js/book.js" defer></script>"""
@@ -618,6 +619,7 @@ def services_hub():
 </div></section>
 <section class="section"><div class="wrap"><div class="grid-3">{cards}</div></div></section>
 {steps_band(HOME_STEPS)}
+{ad_slot("services")}
 {footer()}"""
     return head("Appliance Services — 9 Flat-Rate Services | Top Speed Appliance",
                 "Refrigerator, washer, dryer, oven, dishwasher, freezer & ice maker, microwave, garbage disposal repair and appliance installation — one flat rate card across 65 cities.",
@@ -696,6 +698,7 @@ def cities_hub():
 <section class="section" style="padding-top:16px"><div class="wrap">{groups}
   <div style="margin-top:56px;display:flex;gap:14px;align-items:center;color:var(--red-600)">{icon("sign", 26)}<a class="btn btn-primary" href="/book">Book a repair</a></div>
 </div></section>
+{ad_slot("cities")}
 {footer()}"""
     return head("Service Areas — 65 Cities in Broward, Palm Beach & Miami-Dade | Top Speed Appliance",
                 "Top Speed Appliance serves 65 cities across Broward (31), Palm Beach (16) and Miami-Dade (18) counties — appliance repair & installation at your door.",
@@ -731,6 +734,7 @@ def pricing():
     <a class="btn btn-navy" href="{TEL}">Call {PHONE}</a>
   </div>
 </div></section>
+{ad_slot("pricing")}
 {footer()}"""
     return head("Pricing — $99 Diagnostic · $210 Flat Repair Labor | Top Speed Appliance",
                 "Flat, published appliance pricing: $99 residential diagnostic credited toward your repair, $210 flat repair labor, $150 flat installation labor. Parts in a written quote first.",
@@ -765,6 +769,7 @@ def privacy():
   <h2>Contact</h2>
   <p>Questions about privacy: call {PHONE}, Mon–Fri 8am–7pm.</p>
 </div></div></section>
+{ad_slot("privacy")}
 {footer()}"""
     return head("Privacy Policy | Top Speed Appliance", "How Top Speed Appliance LLC collects and uses booking details on topspeedrepairs.com.", "/privacy") + body
 
@@ -792,6 +797,7 @@ def terms():
   <p>Call {PHONE} to move or cancel a visit. Windows are held on a first-confirmed basis; weather and flooding can
   move windows for safety, and we will always call you first.</p>
 </div></div></section>
+{ad_slot("terms")}
 {footer()}"""
     return head("Terms of Service | Top Speed Appliance", "Top Speed Appliance service terms: $99 diagnostic credited, flat labor, written quotes, 90-day parts & labor warranty.", "/terms") + body
 
@@ -807,6 +813,7 @@ def not_found():
     <a class="btn btn-ghost" href="{TEL}">Call {PHONE}</a>
   </div>
 </div></section>
+{ad_slot("not-found")}
 {footer()}"""
     return head("Page Not Found | Top Speed Appliance", "That page isn't here. Book appliance repair with Top Speed instead.", "/404") + body
 
