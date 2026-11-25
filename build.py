@@ -121,6 +121,14 @@ LOGO_MARK = ('<span class="logo-mark"><svg width="19" height="19" viewBox="0 0 2
              'stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
              '<path d="M12 3.2l6.2 2.1v5c0 4.1-2.6 7-6.2 8.6C8.4 17.3 5.8 14.4 5.8 10.3v-5z"/><path d="M12.5 7.4L9.7 11.9h2l-.8 3.3 3-4.4h-2z" fill="#fff" stroke="none"/></svg></span>')
 
+# ── Top Speed Overdrive brand band (2026-11-24) ─────────────────
+# First element inside <body> on every generated page, above the
+# existing header/nav (nav preserved untouched). Canonical assets:
+# assets/css/overdrive.css + assets/js/overdrive-band.js (verbatim).
+# homeUrl=/ · bookingUrl=/book (this site's real dedicated booking page).
+OVERDRIVE_BAND = """<header class="ts-header"><div class="ts-top"><a class="ts-brand" href="/">TOP <span>SPEED</span><small>APPLIANCE</small></a><div class="ts-lights" aria-hidden="true"><i></i><i></i><i></i></div><div class="ts-gauge" aria-hidden="true"><svg viewBox="0 0 160 100"><path d="M15 80 A65 65 0 0 1 145 80" fill="none" stroke="#45474c" stroke-width="10"/><path d="M126 34 A65 65 0 0 1 145 80" fill="none" stroke="#ff3030" stroke-width="10"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(-90.0 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(-67.5 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(-45.0 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(-22.5 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(0.0 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(22.5 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(45.0 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(67.5 80 80)"/><path d="M80 16 V26" stroke="white" stroke-width="2" transform="rotate(90.0 80 80)"/><g class="ts-needle"><path d="M80 80 L80 24" stroke="#ff3030" stroke-width="4"/><circle cx="80" cy="80" r="5" fill="white"/></g><g fill="white" font-size="10"><text x="12" y="96">0</text><text x="69" y="42">120</text><text x="132" y="96">240</text></g></svg><b>OVERDRIVE</b></div></div><div class="ts-road" aria-hidden="true"><div class="ts-lanes"></div><div class="ts-streak"></div><div class="ts-streak ts-second"></div></div><div class="ts-bottom"><span>GET TOP SPEED — SERVICE IN OVERDRIVE</span><button type="button" class="ts-boost-btn" aria-pressed="false">ENGAGE OVERDRIVE</button><a class="ts-book" href="/book">BOOK SERVICE</a></div></header>
+"""
+
 def head(title, desc, path, ld=None):
     ld_html = ""
     if ld:
@@ -144,10 +152,11 @@ def head(title, desc, path, ld=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">{ld_html}
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/overdrive.css">{ld_html}
 </head>
 <body>
-"""
+{OVERDRIVE_BAND}"""
 
 def nav():
     return f"""
@@ -221,6 +230,7 @@ def footer():
 </footer>
 <script src="{FLAG}/speedy-widget.js" defer></script>
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/overdrive-band.js" defer></script>
 <script src="/ads-stream.js" defer></script>
 </body>
 </html>
