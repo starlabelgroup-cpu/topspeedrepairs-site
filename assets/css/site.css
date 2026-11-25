@@ -290,3 +290,21 @@ textarea.input{resize:vertical;min-height:74px}
   .footer-cols{grid-template-columns:1fr 1fr}
   .sec-head{flex-direction:column;align-items:flex-start}
 }
+
+/* ---------- Top Speed Racing motif system ---------- */
+.eyebrow svg{vertical-align:-3px;margin-right:7px}
+.band-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px}
+.band-light{height:82px;width:auto;flex:none;margin-bottom:6px}
+@media(max-width:640px){.band-light{height:60px}}
+.laurel-ic{color:var(--red-500);display:inline-grid;place-items:center;vertical-align:-4px;margin-right:10px}
+.crest-row{display:flex;gap:12px;align-items:center;margin-top:18px;max-width:34ch}
+.crest-row span{font-size:13.5px;line-height:1.45;color:var(--steel)}
+.crest{flex:none}
+.fleet-band{background:var(--navy-900)}
+.fleet-band .h2{color:#fff}
+.fleet-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:38px}
+.fleet-tile{background:var(--paper);border-radius:var(--r-16);padding:16px 10px 12px;margin:0;text-align:center;box-shadow:var(--sh-card)}
+.fleet-tile img{width:100%;height:auto;display:block}
+.fleet-tile figcaption{font-family:var(--font-h);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-600);margin-top:10px}
+@media(max-width:900px){.fleet-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.fleet-grid{grid-template-columns:repeat(2,1fr)}}

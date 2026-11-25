@@ -96,13 +96,21 @@ def icon(name, size=22):
       "cal": '<rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
       "phone": '<path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
       "check": '<path d="M20 6L9 17l-5-5"/>',
+      "stoplight": '<rect x="8" y="2.5" width="8" height="19" rx="3.5"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1.4" fill="currentColor" stroke="none"/>',
+      "shield": '<path d="M12 3l7 2.4V11c0 4.6-2.9 7.9-7 9.7C7.9 18.9 5 15.6 5 11V5.4z"/><path d="M12.6 7.2L9.4 12h2.2l-.9 3.6L14 11h-2.1z" fill="currentColor" stroke="none"/>',
+      "road": '<path d="M4.5 21L9.5 3M19.5 21L14.5 3"/><path d="M12 18.2v-2.4M12 13.4V11M12 8.2V6" stroke-width="1.8"/>',
+      "sign": '<path d="M12 21.5V11"/><path d="M4 3.5h12.5L20 7l-3.5 3.5H4z"/><path d="M7.5 7h6" stroke-width="1.6"/>',
+      "stripes": '<path d="M3 7h11M3 12h14M3 17h11"/><path d="M17.5 7.5L21 12l-3.5 4.5" stroke-width="1.8"/>',
+      "laurels": '<path d="M7.2 20.2C4.8 16.9 4.2 12.6 5.6 8.6M16.8 20.2c2.4-3.3 3-7.6 1.6-11.6"/><path d="M5.8 15.5l-2.6-.9M6 11.5L3.6 10M7 7.8L5 5.6M18.2 15.5l2.6-.9M18 11.5l2.4-1.5M17 7.8l2-2.2" stroke-width="1.6"/><path d="M8.5 20.5h7" stroke-width="1.6"/>',
+      "tools": '<path d="M13.8 5.2a3.6 3.6 0 0 1 4.9-3.4L16.4 4l2.1 2.1 2.3-2.2a3.6 3.6 0 0 1-4.8 4.8L8.6 16a1.8 1.8 0 0 1-2.5-2.5z"/>',
+      "checker-flag": '<path d="M5 21.5v-19"/><path d="M5 3h13v9H5z"/><path d="M9.3 3v9M13.7 3v9M5 7.5h13" stroke-width="1.1"/><path d="M5 3h4.3v4.5H5zM13.7 7.5H18V12h-4.3z" fill="currentColor" stroke="none"/>',
     }[name]
     return (f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
             f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{p}</svg>')
 
 LOGO_MARK = ('<span class="logo-mark"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" '
              'stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
-             '<path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg></span>')
+             '<path d="M12 3.2l6.2 2.1v5c0 4.1-2.6 7-6.2 8.6C8.4 17.3 5.8 14.4 5.8 10.3v-5z"/><path d="M12.5 7.4L9.7 11.9h2l-.8 3.3 3-4.4h-2z" fill="#fff" stroke="none"/></svg></span>')
 
 def head(title, desc, path, ld=None):
     ld_html = ""
@@ -179,6 +187,7 @@ def footer():
         <a class="logo" href="/">{LOGO_MARK}
           <span><span class="logo-name">TOP SPEED</span><div class="logo-sub">THE FASTER, THE BETTER.</div></span></a>
         <a class="footer-phone" href="{TEL}">{PHONE}</a>
+        <div class="crest-row"><img class="crest" src="/assets/brand/shield-badge.svg" alt="" aria-hidden="true" width="40" height="40"><span>The Top Speed standard — precision motorsport, applied to appliance repair.</span></div>
         <p>Mon–Fri, 8am–7pm · Service-area business — repairs at your home or business<br>
         across 65 cities in Broward, Palm Beach &amp; Miami-Dade.</p>
       </div>
@@ -257,8 +266,22 @@ def steps_band(steps, eyebrow="How it works", title="Red light to green light.")
     cls = "steps steps-4" if len(steps) == 4 else "steps"
     return f"""
 <section class="band"><div class="wrap section">
-  <p class="eyebrow">{eyebrow}</p><h2 class="h2">{title}</h2>
+  <div class="band-head"><div><p class="eyebrow">{eyebrow}</p><h2 class="h2">{title}</h2></div>
+  <img class="band-light" src="/assets/brand/stoplight.svg" alt="" aria-hidden="true" width="34" height="82"></div>
   <div class="{cls}">{cols}</div>
+</div></section>"""
+
+FLEET = [("fleet-f1", "Formula 1"), ("fleet-stallion", "Race Stallion"), ("fleet-cheetah", "Cheetah"),
+         ("fleet-jet", "Fighter Jet"), ("fleet-speedboat", "Speedboat"), ("fleet-spaceship", "Spaceship")]
+
+def fleet_band():
+    tiles = "".join(f'''<figure class="fleet-tile"><img src="/assets/brand/{f}.svg" alt="" aria-hidden="true" width="96" height="64"><figcaption>{n}</figcaption></figure>''' for f, n in FLEET)
+    return f"""
+<section class="fleet-band on-dark"><div class="wrap section">
+  <p class="eyebrow">The Top Speed fleet</p>
+  <h2 class="h2">Six machines. One standard: fast.</h2>
+  <p class="lede" style="margin-top:14px;max-width:62ch">The racers, runners and rockets that set our pace — the standard behind every visit: prepared, precise, and built for speed.</p>
+  <div class="fleet-grid">{tiles}</div>
 </div></section>"""
 
 HOME_STEPS = [
@@ -336,6 +359,7 @@ def home():
 </div></section>
 {steps_band(HOME_STEPS)}
 {speedy_section()}
+{fleet_band()}
 <section class="section" id="pricing" style="padding-top:24px"><div class="wrap">
   <p class="eyebrow">Flat, published pricing</p>
   <h2 class="h2" style="margin-bottom:40px">The rate card. No ranges, no guessing.</h2>
@@ -350,7 +374,7 @@ def home():
 <section class="section" style="padding-top:0"><div class="wrap invite">
   <div>
     <p class="eyebrow">After the visit</p>
-    <h2 class="h2">Fixed? Tell the next neighbor.</h2>
+    <h2 class="h2"><span class="laurel-ic">{icon("laurels", 30)}</span>Fixed? Tell the next neighbor.</h2>
     <p class="lede" style="margin-top:14px">Word of mouth is our fastest lane. If your tech earned it, leave a review
     on our Google profile — and send a friend our way with Refer &amp; Earn: they get $25 off their first repair,
     you earn a $25 credit when their job is done.</p>
@@ -548,7 +572,7 @@ def services_hub():
     cards = "\n".join(svc_card(s) for s in SERVICES)
     body = f"""{nav()}
 <section class="page-hero" style="padding-bottom:72px"><div class="wrap">
-  <p class="eyebrow">Services</p>
+  <p class="eyebrow">{icon("tools", 16)}Services</p>
   <h1 class="h1" style="font-size:clamp(36px,4.6vw,54px)">Nine services.<br><span class="red">One fast call.</span></h1>
   <p class="lede" style="margin-top:14px">Every service runs on the same flat rate card — $99 diagnostic credited toward your repair, $210 flat repair labor, $150 flat installation labor. Parts always in a written quote first.</p>
 </div></section>
@@ -581,7 +605,7 @@ def city_page(c):
 <section class="city-hero">
   <img class="bg" src="{IMG_VAN}" alt="Top Speed service van on a palm-lined street in South Florida">
   <div class="wrap city-hero-in">
-    <p class="eyebrow">Appliance repair — {c['county']} County</p>
+    <p class="eyebrow">{icon("road", 16)}Appliance repair — {c['county']} County</p>
     <h1 class="display">{c['name']}</h1>
     <p class="lede" style="margin-top:16px;max-width:56ch">Appliance repair and installation at your home or business in
     {c['name']} — book in about a minute, a Service Setter confirms your window by phone, and you track your tech live to your door.</p>
@@ -623,13 +647,13 @@ def cities_hub():
         groups += f'<p class="eyebrow" style="margin-top:44px">{county} County — {len(cs)} cities</p><div class="chips">{chips}</div>'
     body = f"""{nav()}
 <section class="page-hero" style="padding-bottom:72px"><div class="wrap">
-  <p class="eyebrow">Coverage</p>
+  <p class="eyebrow">{icon("road", 16)}Coverage</p>
   <h1 class="h1" style="font-size:clamp(36px,4.6vw,54px)">65 cities.<br><span class="red">One platform.</span></h1>
   <p class="lede" style="margin-top:14px">Top Speed is a service-area business — repairs happen at your home or business.
   Enter your ZIP when you book and we match your city automatically; every city below is served Mon–Fri, 8am–7pm.</p>
 </div></section>
 <section class="section" style="padding-top:16px"><div class="wrap">{groups}
-  <div style="margin-top:56px"><a class="btn btn-primary" href="/book">Book a repair</a></div>
+  <div style="margin-top:56px;display:flex;gap:14px;align-items:center;color:var(--red-600)">{icon("sign", 26)}<a class="btn btn-primary" href="/book">Book a repair</a></div>
 </div></section>
 {footer()}"""
     return head("Service Areas — 65 Cities in Broward, Palm Beach & Miami-Dade | Top Speed Appliance",
@@ -855,9 +879,11 @@ Allow: /
 Sitemap: https://topspeedrepairs.com/sitemap.xml
 """
 
-FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="14" fill="#E94E5C"/>
-<path d="M35 8L18 37h11l-3.5 19L44 27H32.5L35 8z" fill="#fff"/>
+FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+<rect width="48" height="48" rx="10" fill="#0C1B31"/>
+<path fill="#fff" d="M24 5l12.5 4.3v9.6c0 8.1-5.2 14.1-12.5 17.5C16.7 33 11.5 27 11.5 18.9V9.3z"/>
+<path fill="none" stroke="#E94E5C" stroke-width="1.8" d="M24 8.4l9.4 3.2v7.3c0 6.4-4 11.2-9.4 13.9-5.4-2.7-9.4-7.5-9.4-13.9v-7.3z"/>
+<path fill="#0C1B31" d="M25.8 13.5L18.8 24h4.6l-1.4 8 8.4-11.4h-4.7z"/>
 </svg>
 """
 
