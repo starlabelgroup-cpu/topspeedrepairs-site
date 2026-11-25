@@ -14,6 +14,12 @@ Image sources (2026-11-24 image replacement, Ramone's directive):
   kept in ~/workspace/repairs-image-replacement/processed/hero-tech.webp
   (swap workspace: ~/workspace/repairs-hero-swap/).
   city-van is the premium package's art-directed van photo.
+  logo-main: Ramone's uploaded full logo lockup (2026-11-24 header logo
+  swap) — black-field "TOP SPEED / BUILT FOR SPEED. DRIVEN BY
+  PERFORMANCE." graphic, converted from his 1536x1024 upload to WebP
+  (1200px wide, near-black crushed to pure #000 so it blends into the
+  black header bar), kept in
+  ~/workspace/repairs-logo-swap/processed/logo-main.webp.
 After regenerating, verify: node -e "const D=require('./api/_imgdata');
 for (const k in D){const b=Buffer.from(D[k].b64,'base64');
 const c=require('crypto');console.log(k,b.length,
@@ -24,6 +30,7 @@ import base64, hashlib, os
 PROC = os.path.expanduser("~/workspace/repairs-image-replacement/processed")
 SRC = {
     "hero-tech": f"{PROC}/hero-tech.webp",
+    "logo-main": os.path.expanduser("~/workspace/repairs-logo-swap/processed/logo-main.webp"),
     "city-van": os.path.expanduser("~/workspace/premium-redesign-figma/assets/media-generation-ts-city-van-street-0-5e5d3bc4-4f4e-43ef-8131-b8479686a7a4.webp"),
     "svc-refrigerator": f"{PROC}/svc-refrigerator.webp",
     "svc-washer": f"{PROC}/svc-washer.webp",

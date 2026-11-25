@@ -153,8 +153,7 @@ def nav():
     return f"""
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Top Speed Appliance — home">{LOGO_MARK}
-      <span><span class="logo-name">TOP SPEED</span><div class="logo-sub">APPLIANCE</div></span></a>
+    <a class="logo" href="/" aria-label="Top Speed Appliance — home"><img class="logo-img" src="/api/img?n=logo-main" alt="Top Speed Appliance — home" width="87" height="58"></a>
     <nav class="nav-links" aria-label="Main">
       <a href="/services">Services</a>
       <a href="/cities">Cities</a>
